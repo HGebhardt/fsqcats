@@ -46,3 +46,5 @@ end
 
 # Foursquare
 gem 'foursquare2'
+
+gem 'awesome_nested_set'
