@@ -1,37 +1,5 @@
-<h1>Listing categories</h1>
+<h1>Foursquare categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Uuid</th>
-      <th>Name</th>
-      <th>Plural name</th>
-      <th>Short name</th>
-      <th>Icon prefix</th>
-      <th>Icon suffix</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.uuid %></td>
-        <td><%= category.name %></td>
-        <td><%= category.plural_name %></td>
-        <td><%= category.short_name %></td>
-        <td><%= category.icon_prefix %></td>
-        <td><%= category.icon_suffix %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+<%= nested_li(@categories) do |category| %>
+  <%= category.name %>
+<% end %>
