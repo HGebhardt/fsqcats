@@ -47,4 +47,4 @@ end
 # Foursquare
 gem 'foursquare2'
 
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
