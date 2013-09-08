@@ -1,5 +1,8 @@
 <h1>Foursquare <%= t(:categories) %></h1>
 
 <%= nested_li(@categories) do |category| %>
+  <% unless @icon_size.to_i.zero? %>
+    <%= image_tag("#{category.icon_prefix}bg_#{@icon_size}#{category.icon_suffix}") %>
+  <% end %>
   <%= category.name %>
 <% end %>

@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+    @icon_size = params[:is] || 32
     @categories = Category.where(locale: params[:locale] || 'de').order('lft ASC')
   end
 
