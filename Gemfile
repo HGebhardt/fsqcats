@@ -48,3 +48,6 @@ end
 gem 'foursquare2'
 
 gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
+
+# Phusion Passenger
+gem 'passenger'
