@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.where(locale: params[:locale] || 'de')
+    @categories = Category.where(locale: params[:locale] || 'de').order('lft ASC')
   end
 
   # GET /categories/1
