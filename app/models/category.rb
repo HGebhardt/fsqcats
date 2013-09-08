@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
 
   has_many :translations, class_name: 'Category', primary_key: :uuid, foreign_key: :uuid
 
+  default_scope { order('lft ASC') }
   scope :top_level, -> { where(parent_id: nil) }
 
   def self.import(locale='en')
