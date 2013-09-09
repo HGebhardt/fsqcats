@@ -1,34 +1,16 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Uuid:</strong>
-  <%= @category.uuid %>
+  <%= image_tag @category.icon(88) %>
 </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<p>
-  <strong>Plural name:</strong>
-  <%= @category.plural_name %>
-</p>
-
-<p>
-  <strong>Short name:</strong>
-  <%= @category.short_name %>
-</p>
-
-<p>
-  <strong>Icon prefix:</strong>
-  <%= @category.icon_prefix %>
-</p>
-
-<p>
-  <strong>Icon suffix:</strong>
-  <%= @category.icon_suffix %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h2><%= t(:translations) %></h2>
+<% @category.translations.each do |translation| %>
+<h3><%= t("locales.#{translation.locale}") %></h3>
+<dl>
+  <dt>Name</dt>
+  <dd><%= translation.name %></dd>
+  <dt>Plural</dt>
+  <dd><%= translation.plural_name %></dd>
+  <dt>Short name</dt>
+  <dd><%= translation.short_name %></dd>
+</dl>
+<% end %>

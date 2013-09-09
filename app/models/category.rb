@@ -19,6 +19,10 @@ class Category < ActiveRecord::Base
     rec_import(categories, locale)
   end
 
+  def icon(size=32)
+    "#{self.icon_prefix}bg_#{size}#{self.icon_suffix}"
+  end
+
   private
   def self.rec_import(categories, locale='en', parent_id=nil)
     categories.each do |category|

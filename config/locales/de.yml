@@ -1,2 +1,7 @@
 de:
   categories: "Kategorien"
+  translations: "Übersetzungen"
+  locales:
+    de: "Deutsch"
+    en: "Englisch"
+    fr: "Französisch"
