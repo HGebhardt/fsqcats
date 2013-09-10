@@ -1,5 +1,7 @@
 Fsqcats::Application.routes.draw do
-  resources :categories
+  resources :categories do
+    get 'compare', on: :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

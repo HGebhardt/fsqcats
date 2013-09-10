@@ -8,6 +8,13 @@ class CategoriesController < ApplicationController
     @categories = Category.where(locale: params[:locale] || 'de').order('lft ASC')
   end
 
+  def compare
+    @icon_size = params[:is] || 0
+    @categories_en = Category.where(locale: 'en').order('lft ASC')
+    @categories_de = Category.where(locale: 'de').order('lft ASC')
+    @categories_fr = Category.where(locale: 'fr').order('lft ASC')
+  end
+
   # GET /categories/1
   # GET /categories/1.json
   def show
