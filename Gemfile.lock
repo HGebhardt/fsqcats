@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: 4e239795de0e7038f9f1e17a9e02eab19330012c
+  specs:
+    anjlab-bootstrap-rails (3.0.0.2)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
+GIT
   remote: git://github.com/collectiveidea/awesome_nested_set.git
   revision: 0429d6a82be40081caf40b976fed6a4d6ab294e3
   specs:
@@ -130,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails!
   awesome_nested_set!
   coffee-rails (~> 4.0.0)
   foursquare2

@@ -1,3 +1,4 @@
+<h1>Kategorie-Details</h1>
 <p>
   <%= image_tag @category.icon(88) %>
 </p>
@@ -5,7 +6,7 @@
 <h2><%= t(:translations) %></h2>
 <% @category.translations.each do |translation| %>
 <h3><%= t("locales.#{translation.locale}") %></h3>
-<dl>
+<dl class="dl-horizontal">
   <dt>Name</dt>
   <dd><%= translation.name %></dd>
   <dt>Plural</dt>
