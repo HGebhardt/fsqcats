@@ -1,4 +1,14 @@
-<h1>Kategorie-Details</h1>
+<div class="page-header">
+  <h1>Kategorie-Details</h1>
+</div>
+
+<ol class="breadcrumb">
+  <% @category.ancestors.each do |cat| %>
+  <li><%= link_to cat.name, category_path(cat) %></li>
+  <% end %>
+  <li class="active"><%= @category.name %></li>
+</ol>
+
 <p>
   <%= image_tag @category.icon(88) %>
 </p>
