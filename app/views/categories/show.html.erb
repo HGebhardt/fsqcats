@@ -3,6 +3,7 @@
 </div>
 
 <ol class="breadcrumb">
+  <li><%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-th-list"), root_path, title: "Startseite" %></li>
   <% @category.ancestors.each do |cat| %>
   <li><%= link_to cat.name, category_path(cat) %></li>
   <% end %>
