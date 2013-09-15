@@ -20,6 +20,9 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def search
+    @categories = Category.where("name ILIKE ?", "%#{params[:q]}%")
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -54,3 +54,6 @@ gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
 gem 'passenger'
 
 gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails', github: 'anjlab/bootstrap-rails'
+
+gem 'twitter-typeahead-rails'
+gem 'hogan_assets'

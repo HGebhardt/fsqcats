@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
+//= require hogan
+//= require twitter/typeahead.min
 //= require_tree .
