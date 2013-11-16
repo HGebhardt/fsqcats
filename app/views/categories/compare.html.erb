@@ -1,27 +1,13 @@
 
 <div class="row">
-  <div class="col-md-4">
-    <%= nested_li(@categories_en) do |category| %>
-      <% unless @icon_size.to_i.zero? %>
-        <%= image_tag("#{category.icon_prefix}bg_#{@icon_size}#{category.icon_suffix}") %>
+  <% %w(categories_en categories_de categories_fr).each do |cate| %>
+    <div class="col-md-4">
+      <%= nested_li(instance_variable_get("@#{cate}")) do |category| %>
+        <% unless @icon_size.to_i.zero? %>
+          <%= image_tag("#{category.icon_prefix}bg_#{@icon_size}#{category.icon_suffix}") %>
+        <% end %>
+        <%= link_to category.name, category_path(category), class: "btn hovers", role: "button", data: {category: category.uuid} %>
       <% end %>
-      <%= link_to category.name, category_path(category) %>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <%= nested_li(@categories_de) do |category| %>
-      <% unless @icon_size.to_i.zero? %>
-        <%= image_tag("#{category.icon_prefix}bg_#{@icon_size}#{category.icon_suffix}") %>
-      <% end %>
-      <%= link_to category.name, category_path(category) %>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <%= nested_li(@categories_fr) do |category| %>
-      <% unless @icon_size.to_i.zero? %>
-        <%= image_tag("#{category.icon_prefix}bg_#{@icon_size}#{category.icon_suffix}") %>
-      <% end %>
-      <%= link_to category.name, category_path(category) %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

@@ -26,3 +26,12 @@ body {
   background-color: #f5f5f5;
 }
 
+
+
+li {
+  white-space: nowrap;
+}
+a.active {
+//  text-decoration: underline;
+  border: 1px solid blue;
+}

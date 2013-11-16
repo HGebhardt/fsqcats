@@ -10,4 +10,11 @@ $(document).ready(function() {
   $('.typeahead').on('typeahead:selected', function(obj, datum) {
     window.location.assign(datum.url);
   });
+
+  $('.hovers').hover(function() {
+    $("a[data-category='" + $(this).data('category') + "']").addClass('btn-primary');
+  }, function() {
+    $("a[data-category='" + $(this).data('category') + "']").removeClass('btn-primary');
+  });
+
 });
