@@ -6,6 +6,6 @@ Fsqcats::Application.routes.draw do
     end
   end
 
-  get '/:locale' => 'categories#index'
+  get ':locale', to: 'categories#index', as: 'start'
   root 'categories#index'
 end
