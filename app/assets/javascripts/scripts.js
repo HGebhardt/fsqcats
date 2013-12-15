@@ -17,4 +17,15 @@ $(document).ready(function() {
     $("a[data-category='" + $(this).data('category') + "']").removeClass('btn-primary');
   });
 
+  $.jstree._themes = '/assets/themes/';
+  $("#cattree").jstree({
+    "core":{
+      "themes": {
+        "name": "proton",
+        "dots": true,
+        "icons": false
+      }
+    }
+  });
+
 });
