@@ -1,4 +1,6 @@
 Fsqcats::Application.routes.draw do
+  get 'categories/:id', to: 'categories#redirect', id: /\d+/
+  get 'categories/search', to: 'categories#search'
   scope "/:locale" do
     get 'categories/:id', to: 'categories#redirect', id: /\d+/
     resources :categories do
