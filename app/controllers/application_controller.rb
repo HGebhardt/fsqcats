@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def default_url_options(options={})
-    { locale: I18n.locale }
+    { locale: params[:locale].presence || I18n.locale }
   end
 end
