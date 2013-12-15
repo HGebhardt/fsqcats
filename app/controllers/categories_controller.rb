@@ -22,6 +22,11 @@ class CategoriesController < ApplicationController
     @categories = Category.where("name ILIKE ?", "%#{params[:q]}%")
   end
 
+  def redirect
+    category = Category.find(params[:id])
+    redirect_to category_path(locale: params[:locale], id: category.uuid)
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
