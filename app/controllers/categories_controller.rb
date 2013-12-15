@@ -9,9 +9,10 @@ class CategoriesController < ApplicationController
 
   def compare
     @icon_size = params[:is] || 0
-    @categories_en = Category.where(locale: 'en').order('lft ASC')
-    @categories_de = Category.where(locale: 'de').order('lft ASC')
-    @categories_fr = Category.where(locale: 'fr').order('lft ASC')
+    @languages = {}
+    (params[:tl].presence || 'en,de').split(',').each do |ll|
+      @languages[ll] = Category.where(locale: ll).order('lft ASC')
+    end
   end
 
   def show
