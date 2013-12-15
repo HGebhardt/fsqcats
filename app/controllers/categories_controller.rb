@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
 
   def redirect
     category = Category.find(params[:id])
-    redirect_to category_path(locale: params[:locale], id: category.uuid)
+    redirect_to category_path(locale: (params[:locale].presence || 'de'), id: category.uuid)
   end
 
   private
