@@ -6,6 +6,10 @@ class Category < ActiveRecord::Base
   default_scope { order('lft ASC') }
   scope :top_level, -> { where(parent_id: nil) }
 
+  def to_param
+    uuid
+  end
+
   def self.import(locale='en')
     # json = File.read(Rails.root.join("tmp/categories.#{locale}.json"))
     # categories = ActiveSupport::JSON.decode(json)['response']['categories']
