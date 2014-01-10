@@ -30,14 +30,15 @@ class Category < ActiveRecord::Base
   private
   def self.rec_import(categories, locale='en', parent_id=nil)
     categories.each do |category|
-      c = Category.find_or_create_by(uuid: category['id'], locale: locale) do |cat|
-        cat.name = category['name']
-        cat.plural_name = category['pluralName']
-        cat.short_name = category['shortName']
-        cat.icon_prefix = category['icon']['prefix']
-        cat.icon_suffix = category['icon']['suffix']
-        cat.parent_id = parent_id
-      end
+      c = Category.find_or_initialize_by(uuid: category['id'], locale: locale)
+      c.name = category['name']
+      c.plural_name = category['pluralName']
+      c.short_name = category['shortName']
+      c.icon_prefix = category['icon']['prefix']
+      c.icon_suffix = category['icon']['suffix']
+      c.parent_id = parent_id
+      c.save!
+
       next if category['categories'].blank?
       rec_import(category['categories'], locale, c.id)
     end
