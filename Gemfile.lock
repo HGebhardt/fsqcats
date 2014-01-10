@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: 3250d5494a8fb2715d3a16e24c7b82f57266ff42
-  specs:
-    anjlab-bootstrap-rails (3.0.3.0)
-      railties (>= 3.0)
-      sass (>= 3.2)
-
-GIT
   remote: git://github.com/collectiveidea/awesome_nested_set.git
   revision: dbe4555222758f39a60ba15afd81f23d769146b3
   specs:
@@ -42,6 +34,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -146,8 +140,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  anjlab-bootstrap-rails!
   awesome_nested_set!
+  bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
   foursquare2
   hogan_assets

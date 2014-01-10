@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require twitter/bootstrap
+//= require bootstrap
 //= require hogan
 //= require twitter/typeahead.min
 //= require_tree .

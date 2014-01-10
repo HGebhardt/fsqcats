@@ -53,7 +53,7 @@ gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
 # Phusion Passenger
 gem 'passenger'
 
-gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails', github: 'anjlab/bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 gem 'twitter-typeahead-rails'
 gem 'hogan_assets'
