@@ -25,6 +25,11 @@ class Category < ActiveRecord::Base
     "#{self.icon_prefix}bg_#{size}#{self.icon_suffix}"
   end
 
+  def name_for(locale=:en)
+    @_translations ||= Hash[self.translations.pluck([:locale, :name])]
+    @_translations[locale.to_s].presence || @_translations['en'].presence || self.name
+  end
+
   private
   def self.rec_import(categories, locale='en', parent_id=nil)
     categories.each do |category|
