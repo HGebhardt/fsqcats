@@ -11,8 +11,6 @@ class Category < ActiveRecord::Base
   end
 
   def self.import(locale='en')
-    # json = File.read(Rails.root.join("tmp/categories.#{locale}.json"))
-    # categories = ActiveSupport::JSON.decode(json)['response']['categories']
     foursquare = Foursquare2::Client.new(
       client_id: ENV['FSQ_CLIENT_ID'],
       client_secret: ENV['FSQ_CLIENT_SECRET'],
