@@ -17,7 +17,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.includes(:translations).where(uuid: params[:id], locale: params[:locale]).first
-    @category = Category.includes(:translations).where(uuid: params[:id], locale: 'en').first if @category.nil?
   end
 
   def search
