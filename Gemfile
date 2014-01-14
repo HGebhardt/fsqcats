@@ -50,8 +50,7 @@ gem 'foursquare2'
 
 gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
 
-# Phusion Passenger
-gem 'passenger'
+gem 'unicorn'
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
